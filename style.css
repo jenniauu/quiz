@@ -1,0 +1,215 @@
+@font-face {
+    font-family: 'Extra';
+    src: url('/fonts/ecopark\ demo.otf');
+}
+
+@keyframes pulsar{
+    0%{
+        transform: none;
+    }
+    50%{
+        transform: scale(1.05);
+    }
+    100%{
+        transform: none;
+    }
+}
+
+body{
+    background-image: url('https://i.pinimg.com/736x/6b/22/76/6b2276c6b2beed0ecf00c07f89d4e827.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#perguntas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.pergunta{
+    margin-top: 30px;
+    border: 2px groove palevioletred;
+    width: 500px;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: rgb(255, 248, 249);
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+.pergunta:hover{
+    transform: scale(1.05);
+    transition: 1s;
+}
+button:hover{
+    transform: scale(1.05);
+    transition: 1s;
+}
+
+label{
+    margin-bottom: 5px;
+    font-size: 20px;
+    text-align: justify;
+    margin-left: 200px;
+    cursor: pointer;
+}
+
+input{
+    color: palevioletred;
+}
+
+.resultado{
+    border: 2px groove palevioletred;
+    width: 800px;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: rgb(255, 248, 249);
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+button{
+    border-radius: 20px;
+    background-color: pink;
+    font-family: 'Extra';
+    font-size: 15px;
+    color: rgb(131, 49, 76);
+    padding: 10px;
+    margin-top: 40px;
+    border-color: palevioletred;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+h1{
+    font-family: 'Extra';
+}
+#nome{
+    font-family: 'Extra';
+    color: black;
+    font-size: 30px;
+}
+#pergunta, h1{
+    font-family: 'Extra';
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+    border-radius: 50%;
+    animation-name: pulsar;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+h2{
+    font-family: 'Extra';
+    font-size: 15px;
+    color: rgb(131, 49, 76);
+}
+#r{
+    margin-left: auto;
+    margin-right: auto;
+}
+h4{
+    font-size: 20px;
+    text-align: justify;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-emphasis: none;
+    text-shadow: none;
+    color: rgb(80, 34, 53);
+}
+
+#bela{
+    font-size: 20px;
+}
+#branca{
+    font-size: 20px;
+}
+#frozen{
+    font-size: 20px;
+}
+#vanelope{
+    font-size: 20px;
+}
+
+#images{
+    width: 500px;
+    height: 600px;
+    border-radius: 20px;
+    border: 2px groove palevioletred;
+    animation-name: pulsar;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.div1{
+    background-image: url(/images/cat.jfif);
+    background-size: cover;
+    background-position: center;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+.div2{
+    background-image: url(/images/hoe.jfif);
+    background-size: cover;
+    background-position: center;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+.div3{
+    background-image: url(/images/kill.jfif);
+    background-size: cover;
+    background-position: center;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+.div4{
+    background-image: url(/images/smash.jfif);
+    background-size: cover;
+    background-position: center;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+.div5{
+    background-image: url('/images/r.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.glow {
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    animation: glowtext 1s ease-in-out infinite alternate;
+  }
+
+  section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  @-webkit-keyframes glow {
+    from {
+      box-shadow: 0 0 3px #e60073, 0 0 5px #e60073, 0 0 7px white, 0 0 9px white, 0 0 11px white, 0 0 13px white, 0 0 15px white;
+    }
+    
+    to {
+      box-shadow: 0 0 5px #ff4da6, 0 0 7px white, 0 0 9px white, 0 0 11px white, 0 0 13px white, 0 0 15px white, 0 0 17px white;
+    }
+  }
+  @-webkit-keyframes glowtext {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+  }
+

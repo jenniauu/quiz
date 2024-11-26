@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="perguntas">
+        <div id="perguntas">
+            <h1 id="boas"></h1>
+            <div class="pergunta">
+                <h2>Qual sua cor favorita?</h2>
+                <label>
+                    <input type="radio" name="p1" id="" class="radios" value="a">Rosa
+                </label>
+                <label>
+                    <input type="radio" name="p1" id="" class="radios" value="b">Preto
+                </label>
+                <label>
+                    <input type="radio" name="p1" id="" class="radios" value="c">Branco
+                </label>
+                <label>
+                    <input type="radio" name="p1" id="" class="radios" value="d">Azul
+                </label>
+            </div>
+            <div class="pergunta">
+                <h2>Como você se descreveria?</h2>
+                <label>
+                    <input type="radio" name="p2" id="" class="radios" value="a">Feminista
+                </label>
+                <label>
+                    <input type="radio" name="p2" id="" class="radios" value="b">Freira
+                </label>
+                <label>
+                    <input type="radio" name="p2" id="" class="radios" value="c">Depressiva
+                </label>
+                <label>
+                    <input type="radio" name="p2" id="" class="radios" value="d">Militante
+                </label>
+            </div>
+            <div class="pergunta">
+                <h2>Qual sua comida favorita?</h2>
+                <label>
+                    <input type="radio" name="p3" id="" class="radios" value="a">Peixe
+                </label>
+                <label>
+                    <input type="radio" name="p3" id="" class="radios" value="b">Pão
+                </label>
+                <label>
+                    <input type="radio" name="p3" id="" class="radios" value="c">Bife
+                </label>
+                <label>
+                    <input type="radio" name="p3" id="" class="radios" value="d">Pirulito
+                </label>
+            </div>
+            <div class="pergunta">
+                <h2>Qual seu lugar favorito?</h2>
+                <label>
+                    <input type="radio" name="p4" id="" class="radios" value="a">Pet-Shop
+                </label>
+                <label>
+                    <input type="radio" name="p4" id="" class="radios" value="b">Igreja
+                </label>
+                <label>
+                    <input type="radio" name="p4" id="" class="radios" value="c">Fazenda
+                </label>
+                <label>
+                    <input type="radio" name="p4" id="" class="radios" value="d">Creche
+                </label>
+            </div>
+            <div class="pergunta">
+                <h2>Qual seu animal favorito?</h2>
+                <label>
+                    <input type="radio" name="p5" id="" class="radios" value="a">Gato
+                </label>
+                <label>
+                    <input type="radio" name="p5" id="" class="radios" value="b">Pombo
+                </label>
+                <label>
+                    <input type="radio" name="p5" id="" class="radios" value="c">Cordeiro
+                </label>
+                <label>
+                    <input type="radio" name="p5" id="" class="radios" value="d">Cachorro
+                </label>
+            </div>
+            <button class="button" onclick="contarVotos()">Resultado</a>
+        </div>
+</section>
+    <section id="resultado" style="display: none;">
+    <div class="resultado">
+        <h1 id="nome"></h1>
+        <div id="images"></div>
+        <h4 id="resposta"></h4>
+        <h3 id="porcentagem"></h3>
+        <h3 id="porcentagem2"></h3>
+    </div>
+    <button class="button" id="r" onclick="refazer()">Refazer</a>
+</section>
+<script>
+    let h1 = document.getElementById('boas');
+    let nome = localStorage.getItem('nomeSalvo');
+    h1.innerHTML = 'Seja bem-vindo ' + nome;
+    h1.classList.add('glow');
+</script>
+    <script>
+        let porc = 0;
+        var audio = new Audio('som.mp3');
+        let perguntas = document.getElementById("perguntas");
+        let resultado = document.getElementById("resultado");
+        let div1 = document.getElementById("images");
+        function contarVotos(){
+            audio.play();
+            perguntas.style.display = "none";
+            resultado.style.display = "block";
+            //Criando contadores
+            let contbela = 0;
+            let contbranca = 0;
+            let contfrozen = 0;
+            let contvanelope = 0;
+            
+            //Obetendo os radios da classe radios
+            let radios = document.getElementsByClassName("radios")
+
+            //Percorrendo todos os elementos radios
+            for (let i=0; i < radios.length; i++){
+                if (radios[i].checked){
+                    if(radios[i].value == "a"){
+                        contbela++;
+                    } else if(radios[i].value == "b"){
+                        contbranca++;
+                    } else if(radios[i].value == "c"){
+                        contfrozen++;
+                    } else{
+                        contvanelope++;
+                    }
+
+                }
+            }
+
+            let total = contbela + contbranca + contfrozen + contvanelope
+            
+
+            if (contbela > contfrozen && contbela > contbranca && contbela > contvanelope) {
+                document.getElementById("nome").innerHTML = "Gato feminista"
+                div1.classList.add("div1");
+                document.getElementById("resposta").innerHTML = "Parabéns! Suas respostas mostram que você é uma verdadeira defensora da igualdade e dos direitos de todos. Assim como um gato que se move com graça e independência, você entende a importância de lutar contra injustiças e de apoiar aqueles ao seu redor. Continue espalhando seu amor e sua luta por um mundo mais justo e igualitário!"
+                let porc = (contbela/total)*100
+                document.getElementById('porcentagem').innerHTML = porc + "%"
+            } else if (contbranca > contfrozen && contbranca > contbela && contbranca > contvanelope){
+                document.getElementById("nome").innerHTML = "Freira safada"
+                div1.classList.add("div2");
+                document.getElementById("resposta").innerHTML = "Parabéns! Você é uma verdadeira mestra na arte de misturar o sagrado com o profano! Sua personalidade é cheia de surpresas, e você não tem medo de explorar diferentes facetas da vida. Entre os altos e baixos, você sabe como se divertir e desafiar normas, sempre com muito charme. Continue a viver a vida com essa ousadia e humor!"
+                let porc = (contbranca/total)*100
+                document.getElementById('porcentagem').innerHTML = porc + "%"
+            } else if (contfrozen > contbela && contfrozen > contbranca && contfrozen > contvanelope){
+                document.getElementById("nome").innerHTML = "Cordeiro depressivo"
+                div1.classList.add("div3");
+                document.getElementById("resposta").innerHTML = "Parabéns! Você é sensível e profundamente reflexivo. Às vezes, a vida pode parecer pesada, e você pode se sentir um pouco isolado em seus pensamentos. Mas lembre-se: mesmo os cordeiros mais tristes podem encontrar a luz! É importante cuidar de sua saúde mental e buscar apoio quando necessário. A vida é uma jornada e há beleza até nos momentos mais difíceis."
+                let porc = (contfrozen/total)*100
+                document.getElementById('porcentagem').innerHTML = porc + "%"
+            } else if (contvanelope > contbela && contvanelope > contbranca && contvanelope > contfrozen){
+                document.getElementById("nome").innerHTML = "Criança militante"
+                div1.classList.add("div4");
+                document.getElementById("resposta").innerHTML = "Parabéns! Você é cheio de paixão e energia! Sua voz é forte e você acredita no poder da mudança. Desde pequeno, você já mostra que se importa com o mundo ao seu redor e está sempre pronto para lutar por justiça. Continue a inspirar os outros com sua determinação e otimismo, porque o futuro é brilhante com pessoas como você por perto!"
+                let porc = (contvanelope/total)*100
+                document.getElementById('porcentagem').innerHTML = porc + "%"
+            } else if (contbela == contbranca){
+                document.getElementById("nome").innerHTML = "Você é uma mistura de Gato militante e Freira Safada"
+                div1.classList.add("div5");
+                let porc = (contbela/total)*100
+                document.getElementById('porcentagem').innerHTML = porc + "%"
+                let porc2 = (contbranca/total)*100
+                document.getElementById('porcentagem2').innerHTML = porc2 + "%"
+            } else if (contbela == contfrozen){
+                document.getElementById("nome").innerHTML = "Você é uma mistura de Gato militante e Cordeiro Depressivo"
+                div1.classList.add("div5");
+                let porc = (contbela/total)*100
+                document.getElementById('porcentagem').innerHTML = porc + "%"
+                let porc2 = (contfrozen/total)*100
+                document.getElementById('porcentagem2').innerHTML = porc2 + "%"
+            } else if (contbela == contvanelope){
+                document.getElementById("nome").innerHTML = "Você é uma mistura de Gato militante e Criança Militante"
+                div1.classList.add("div5");
+                let porc = (contbela/total)*100
+                document.getElementById('porcentagem').innerHTML = porc + "%"
+                let porc2 = (contvanelope/total)*100
+                document.getElementById('porcentagem2').innerHTML = porc2 + "%"
+            } else if (contbranca == contfrozen){
+                document.getElementById("nome").innerHTML = "Você é uma mistura de Freira Safada e Cordeiro Depressivo"
+                div1.classList.add("div5");
+                let porc = (contbranca/total)*100
+                document.getElementById('porcentagem').innerHTML = porc + "%"
+                let porc2 = (contfrozen/total)*100
+                document.getElementById('porcentagem2').innerHTML = porc2 + "%"
+            } else if (contbranca == contvanelope){
+                document.getElementById("nome").innerHTML = "Você é uma mistura de Freira Safada e Criança Militante"
+                div1.classList.add("div5");
+                let porc = (contbranca/total)*100
+                document.getElementById('porcentagem').innerHTML = porc + "%"
+                let porc2 = (contvanelope/total)*100
+                document.getElementById('porcentagem2').innerHTML = porc2 + "%"
+            } else {
+                document.getElementById("nome").innerHTML = "Você é uma mistura de Cordeiro Depressivo e Criança Militante"
+                div1.classList.add("div5");
+                let porc = (contfrozen/total)*100
+                document.getElementById('porcentagem').innerHTML = porc + "%"
+                let porc2 = (contvanelope/total)*100
+                document.getElementById('porcentagem2').innerHTML = porc2 + "%"
+            }
+
+        }
+        function refazer() {
+            setTimeout(() => {
+                window.open('index.html');
+            }, 1000);
+            
+        }
+    </script>
+</body>
+</html>

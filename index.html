@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+    font-family: 'Extra';
+    src: url('/fonts/ecopark\ demo.otf');
+}
+        body{
+    background-image: url('https://i.pinimg.com/736x/6b/22/76/6b2276c6b2beed0ecf00c07f89d4e827.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+input{
+    border-radius: 12px;
+    border: 2px groove palevioletred;
+    font-size: 15px;
+    text-align: center;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+label{
+    margin-bottom: 5px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 10px;
+}
+div{
+    margin-top: 30px;
+    border: 2px groove palevioletred;
+    width: 300px;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: rgb(255, 248, 249);
+    justify-content: center;
+    align-items: center;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+button{
+    border-radius: 20px;
+    background-color: pink;
+    font-family: 'Extra';
+    font-size: 10px;
+    color: rgb(131, 49, 76);
+    margin-top: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+    padding: 5px;
+    width: fit-content;
+    border-color: palevioletred;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+section{
+    margin-top: 20px;
+    
+}
+h1{
+    font-family: 'Extra';
+    font-size: 50px;
+    color: rgb(0, 0, 0);
+    border-radius: 50%;
+    margin-top: 300px;
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    animation: glowtext 1s ease-in-out infinite alternate;
+  }
+  @-webkit-keyframes glowtext {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+  }
+  @-webkit-keyframes glow {
+    from {
+      box-shadow: 0 0 3px #e60073, 0 0 5px #e60073, 0 0 7px white, 0 0 9px white, 0 0 11px white, 0 0 13px white, 0 0 15px white;
+    }
+    
+    to {
+      box-shadow: 0 0 5px #ff4da6, 0 0 7px white, 0 0 9px white, 0 0 11px white, 0 0 13px white, 0 0 15px white, 0 0 17px white;
+    }
+  }
+    </style>
+</head>
+<body>
+    <h1>✮ Quiz - Que ícone esquizo você é? ✮</h1>
+    <section class="entrada">
+        <div id="entrada">
+            <label>Digite seu nome:</label>
+            <input type="text" name="" id="nome">
+            <button onclick="gravarNome()">Começar o Teste</button>
+            <script src="script.js"></script>
+        </div>
+    </section>
+    
+</body>
+</html>
