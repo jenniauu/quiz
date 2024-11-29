@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Extra';
-    src: url('/fonts/ecopark\ demo.otf');
+    src: url('fonts/ecopark\ demo.otf');
 }
 
 @keyframes pulsar{
@@ -151,31 +151,31 @@ h4{
 }
 
 .div1{
-    background-image: url(/images/cat.jfif);
+    background-image: url(images/cat.jfif);
     background-size: cover;
     background-position: center;
     animation: glow 1s ease-in-out infinite alternate;
 }
 .div2{
-    background-image: url(/images/hoe.jfif);
+    background-image: url(images/hoe.jfif);
     background-size: cover;
     background-position: center;
     animation: glow 1s ease-in-out infinite alternate;
 }
 .div3{
-    background-image: url(/images/kill.jfif);
+    background-image: url(images/kill.jfif);
     background-size: cover;
     background-position: center;
     animation: glow 1s ease-in-out infinite alternate;
 }
 .div4{
-    background-image: url(/images/smash.jfif);
+    background-image: url(images/smash.jfif);
     background-size: cover;
     background-position: center;
     animation: glow 1s ease-in-out infinite alternate;
 }
 .div5{
-    background-image: url('/images/r.jpg');
+    background-image: url('images/r.jpg');
     background-size: cover;
     background-position: center;
 }
